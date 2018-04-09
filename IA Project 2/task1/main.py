@@ -6,6 +6,7 @@ Created on Sun Apr  8 14:33:08 2018
 """
 
 import functions as funct
+import logic
 
 def main ():
     best_k, best_accuracy = 0, 0.0
@@ -36,19 +37,19 @@ def main ():
     # Initialize test
     
     for i in range(1,10):
-        salida_cross = funct.generateOutputMatrix(cross_validation, i, ham_words, spam_words, len(total_words_training), training)
-        accuracy = funct.getAccuracy(salida_cross, cross_validation)
+        salida_cross = logic.generateOutputMatrix(cross_validation, i, ham_words, spam_words, len(total_words_training), training)
+        accuracy = logic.getAccuracy(salida_cross, cross_validation)
         if (accuracy > best_accuracy): best_accuracy, best_k = accuracy, i
     print("\nCROSS VALIADTION: Best K: ", best_k, " | Accuracy: ", best_accuracy)
     
     #--Test Phase---
-    salida_test = funct.generateOutputMatrix(test, best_k, ham_words, spam_words, len(total_words_training), training)
-    test_acc = funct.getAccuracy(salida_test, test)
+    salida_test = logic.generateOutputMatrix(test, best_k, ham_words, spam_words, len(total_words_training), training)
+    test_acc = logic.getAccuracy(salida_test, test)
     print("\nTEST: Best K: ", best_k,   " | Accuracy: ", test_acc, "\n")
     
     #--Input Phase---
     input_file = funct.getText("prueba.txt",True)
-    salida_input = funct.generateOutputMatrix(input_file, best_k, ham_words, spam_words, len(total_words_training), training)
+    salida_input = logic.generateOutputMatrix(input_file, best_k, ham_words, spam_words, len(total_words_training), training)
     funct.writeOutput(salida_input, "output.txt")
     
 
