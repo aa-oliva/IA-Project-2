@@ -25,7 +25,7 @@ def main ():
     ham_words = funct.getUniqueWords(ham)
     
     # The total number of words used for training is calculated 
-    total_words_training = funct.getUniqueWords(funct.getColumna(training, 1))
+    total_words_training = funct.getUniqueWords(funct.getColumn(training, 1))
     
     # The results are printed  
     print ("El tamaño de las oraciones con etiqueta es de :", str(len(matrix)))

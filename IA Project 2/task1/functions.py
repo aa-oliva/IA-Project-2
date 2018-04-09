@@ -33,7 +33,7 @@ def trainingSample(matrix, percentage):
     return training_sample
 
 # Function to classify what type of data is per line according to flag
-def classifyMessages(matrix, label):
+def classifyMessages(matrix):
     spam = []
     ham = []
     for i in range(len(matrix)):
