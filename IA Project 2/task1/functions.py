@@ -12,7 +12,7 @@ def sanitizer(string_input):
     return ((re.sub('[^A-Za-z0-9 \t]+', '', string_input)).lower())
 
 # Function to write a txt file
-def writeOutput(matrix, name):
+def write(matrix, name):
     file = open(name, "w")
     for i in range(len(matrix)):
         Label = matrix[i]

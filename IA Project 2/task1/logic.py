@@ -9,7 +9,7 @@ import functions as func
 """
 INPUT: int K, string palabra, array tipo_palabra, int palabras_totales
 """
-def laplaceSmoothingBasic(k, palabra, tipo_palabra, palabras_totales):
+def laplaceSmoothing(k, palabra, tipo_palabra, palabras_totales):
     res = 0.0
     cant_ocurrencia = 0.0
     cant_observaciones = len(tipo_palabra)
@@ -21,11 +21,11 @@ def laplaceSmoothingBasic(k, palabra, tipo_palabra, palabras_totales):
 """
 INPUT: array string mensajes, int k, array tipo_palabra, int palabras_totales
 """
-def probabilidadOracion(mensaje, k, tipo_palabra, palabras_totales):
+def '(mensaje, k, tipo_palabra, palabras_totales):
     probabilidad = 1.0
     
     for i in range(len(mensaje)):
-        laplace = laplaceSmoothingBasic(k, mensaje[i], tipo_palabra, palabras_totales)
+        laplace = laplaceSmoothing(k, mensaje[i], tipo_palabra, palabras_totales)
         probabilidad =  probabilidad * laplace
     return probabilidad
 

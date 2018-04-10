@@ -50,7 +50,7 @@ def main ():
     #--Input Phase---
     input_file = funct.getText("prueba.txt",True)
     salida_input = logic.generateOutputMatrix(input_file, best_k, ham_words, spam_words, len(total_words_training), training)
-    funct.writeOutput(salida_input, "output.txt")
+    funct.write(salida_input, "output.txt")
     
 
 main()
